@@ -1,10 +1,5 @@
 function solution(n) {
-    let result = 1;
+    const getGcd = (a, b) => b === 0 ? a : getGcd(b, a % b);
     
-    while (1 === 1) {
-        if ((result * 6) % n === 0) {
-            return result;
-        }
-        result++;
-    }
+    return n / getGcd(n, 6);
 }
