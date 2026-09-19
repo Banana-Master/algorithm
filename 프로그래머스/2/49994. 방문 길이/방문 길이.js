@@ -1,15 +1,17 @@
+const MOVES = {
+    U: [0, 1],
+    D: [0, -1],
+    R: [1, 0],
+    L: [-1, 0],
+};
+
 function isValidMove(nx, ny) {
     return nx >= -5 && nx <= 5 && ny >= -5 && ny <= 5;
 }
 
 function updateLocation(x, y, dir) {
-    const dirObj = {
-        "U": [x, y + 1],
-        "D": [x, y - 1],
-        "R": [x + 1, y],
-        "L": [x - 1, y]
-    }
-    return dirObj[dir];
+    const [dx, dy] = MOVES[dir];
+    return [x + dx, y + dy];
 }
 
 function solution(dirs) {
