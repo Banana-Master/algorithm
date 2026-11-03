@@ -1,8 +1,7 @@
 def solution(n):
-    answer = 1
-    while (answer <= n):
-        if (answer * answer == n):
-            return (answer + 1) * (answer + 1)
-        else:
-            answer += 1
-    return -1
+    sqrt = n ** 0.5
+    
+    if sqrt.is_integer():
+        return int(sqrt + 1) ** 2
+    else:
+        return -1
